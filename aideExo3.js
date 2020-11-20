@@ -85,10 +85,10 @@ for(var i = 0; i < tds.length; i++){
 
         
             input.value= myClickedElement.textContent;
-            input.onkeydown="uniKeyCode(event)";
-           
-        myClickedElement.appendChild(input);
-        p.textContent= '';
+            
+            p.textContent= '';   
+            myClickedElement.appendChild(input);
+        
         })
    
         clicked.addEventListener("blur", ()=>{
@@ -100,3 +100,19 @@ for(var i = 0; i < tds.length; i++){
             }
             })
  }
+
+ // MYLENE
+ var tds=document.getElementsByTagName("td"); // on récupère tous les td //
+            for (var i=0; i<tds.length; i++) { // on les parcourt //
+                var td = tds[i]; // on garde un td parmi tous les autres //
+                td.addEventListener('click', function (event){ // on crée un événement sur le td cliqué //
+                    var input = document.createElement("input");  // on crée un input //
+                    input.type="text"; // attributions //
+                    input.value = event.target.innerHTML;
+                    var myClickedElement = event.target; // on fait bien l'événement sur ce td //
+                    myClickedElement.appendChild(input); // on place bien le input sur ce td //
+                        input.addEventListener('change', () => {
+                            event.target.innerHTML=input.value;
+                        })
+                })
+            }
