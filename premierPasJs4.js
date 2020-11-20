@@ -24,3 +24,13 @@
             })        
         })
     }
+
+// onblur
+// change
+// focusout
+
+//je vide le td
+//** je crée un input et je mets un add event listener sur l'input
+/* quitte
+/*récupère la variable
+/*met dans le td*/
