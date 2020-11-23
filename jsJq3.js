@@ -1,34 +1,21 @@
 function changeContenu(iLigne, iColonne, newText){
-    let tabLigne = $("tr");
-    let tabColonne = $(".td*");
+    // const tabLigne = $("tr").eq(row-1);
+    // let tabColonne = $(".td*");
+    // const ligne=iLigne-1;
+    // const colonne= iColonne-1+ligne*2;
+    // $("td").eq(colonne).html(newText);
+    
+    // solution avec JS Vanilla :
+     //attention $('td')[colonne]  par exemple, 
+     //ça renvoie bien à la bonne case mais on ne peut utiliser .html avec . il faut passer par innerHTML = newText
 
-    console.log(tabLigne);
-    console.log(tabColonne);
-
-    let ligne=iLigne-1;
-    while(ligne!=0){
-        colonne= Colonne+Ligne;
-    } 
-    td[i-Math.trunc(i/2)*2];
+    const tabLigne = $("tr").eq(iLigne-1);
+    tabLigne.children().eq(iColonne-1).html(newText); //chaining , eq: fixe directement à la valeur demandée donc on ne passe pas par les tableaux.
 }
 
-iC  tC  c           iL  L
-1   0   0           1   0
-2   1   1           2   1  
-3   2               3   2
-4   3
-5   4
-6   5
+$('#modifBtn').on("click",function(e){
+   
+    changeContenu($("#ligne").val(), $("#colonne").val(), $("#texte").val());
 
-
-/**récupère un tableau de tr --> retrouver la ligne
- * récupèreun tableau de td --> récupère la colonne*/ 
-
- changeContenu(1,2,"3");
-
-
-
- //if i>2
-// soit on appelle avec le nom de la fonction + argument en dur
-/**elegance : sous le tableau : 3 input pour mettre numéro de lignes, numéros de colonne, et texte --> le bouton déclenchera la validation
- * donc le bouton appelle la fonction */ 
+   
+})   

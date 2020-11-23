@@ -23,16 +23,14 @@
 				<td>Row3 cell2</td>
 			</tr> 
         </table>
-        <form action="codeJq3.php">
+        <form action="codeJq3.php?action=envoi" method="post">
             <label for="ligne">Numéro de ligne</label>
-            <input id="ligne" type="text" placeholde="1" name="ligne" min="1" max="3"><br>
+            <input id="ligne" type="text" placeholder="1" value="<?php if (isset($_GET) && !empty($_GET) && $_GET['action']=='envoi'){echo $_POST['ligne'];} ?>" name="ligne"><br>
             <label for="colonne">Numéro de colonne</label>
-            <input id="colonne" type="text" placeholde="2" name="colonne" min="1" max="2"><br>
+            <input id="colonne" type="text" placeholder="2" name="colonne"><br>
             <label for="texte">Texte à ajouter</label>
-            <input id="texte" type="text" placeholde="Bonjour" name="texte"><br>
-			<input id="modifBtn" type="bouton" method="post" value="Modifier la cellule">
-			
-		 <!-- input:text*3 -> fera apparaitre 3 input type="text" -->
+            <input id="texte" type="text" placeholder="Bonjour" name="texte"><br>
+            <input id="soumettre" type="submit">
              
         </form>
 	</body>
